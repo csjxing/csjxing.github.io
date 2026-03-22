@@ -1,1 +1,298 @@
-this is my site
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>微视界 WeiSee</title>
+    <meta name="description" content="专注打造简洁优雅的工具">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1A88E5;
+            --text: #333;
+            --text-light: #666;
+            --bg: #FFFFFF;
+            --border: #E8E6E3;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang SC', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        /* Nav */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .logo {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-left: 1.5rem;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 5rem 1.5rem 3rem;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+
+        .hero h1 span {
+            color: var(--primary);
+        }
+
+        .hero .slogan {
+            font-size: 1.1rem;
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+        }
+
+        .hero .slogan-en {
+            font-size: 0.95rem;
+            color: var(--primary);
+            opacity: 0.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero .desc {
+            font-size: 1rem;
+            color: var(--text-light);
+            max-width: 400px;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero .desc-en {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            opacity: 0.8;
+            max-width: 400px;
+        }
+
+        /* About */
+        .about {
+            padding: 3rem 1.5rem;
+            text-align: center;
+            background: #F5F9FC;
+        }
+
+        .about h2 {
+            font-size: 1.25rem;
+            margin-bottom: 0.25rem;
+            color: var(--text);
+        }
+
+        .about h2 + p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            opacity: 0.8;
+        }
+
+        .about .text-zh {
+            color: var(--text-light);
+            max-width: 500px;
+            margin: 0 auto 0.5rem;
+        }
+
+        .about .text-en {
+            color: var(--text-light);
+            max-width: 500px;
+            margin: 0 auto 2rem;
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+
+        .values {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .value {
+            text-align: center;
+        }
+
+        .value span {
+            font-size: 1.5rem;
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+
+        .value strong {
+            font-size: 0.95rem;
+        }
+
+        .value p {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            opacity: 0.8;
+        }
+
+        /* Contact */
+        .contact {
+            padding: 3rem 1.5rem;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 1.25rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .contact h2 + p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            opacity: 0.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.6rem 1rem;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--text);
+            font-size: 0.9rem;
+        }
+
+        .contact-links a:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .contact-links svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        /* Footer */
+        footer {
+            padding: 2rem 1.5rem;
+            text-align: center;
+            border-top: 1px solid var(--border);
+        }
+
+        footer p {
+            color: var(--text-light);
+            font-size: 0.85rem;
+        }
+
+        /* Mobile */
+        @media (max-width: 480px) {
+            .hero h1 { font-size: 2rem; }
+            .values { gap: 1.5rem; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#" class="logo">微视界</a>
+        <div class="nav-links">
+            <a href="#about">关于</a>
+            <a href="#contact">联系</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <h1><span>微视界</span> WeSee</h1>
+        <p class="slogan">精致视角，看见不一样</p>
+        <p class="slogan-en">Refined Perspective, See Differently</p>
+        <p class="desc">专注打造简洁优雅的工具，让技术服务于人</p>
+        <p class="desc-en">Crafting simple, elegant tools that serve people</p>
+    </section>
+
+    <section class="about" id="about">
+        <h2>关于我们</h2>
+        <p>About Us</p>
+        <p class="text-zh">我们相信最好的工具是让你忘记它的存在。去除冗余，保留本质。</p>
+        <p class="text-en">We believe the best tools are those you forget exist. Remove the unnecessary, keep the essential.</p>
+        <div class="values">
+            <div class="value">
+                <span>🎯</span>
+                <strong>专注</strong>
+                <p>Focus</p>
+            </div>
+            <div class="value">
+                <span>✨</span>
+                <strong>简约</strong>
+                <p>Simple</p>
+            </div>
+            <div class="value">
+                <span>💜</span>
+                <strong>用心</strong>
+                <p>Care</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <h2>联系我们</h2>
+        <p>Contact Us</p>
+        <div class="contact-links">
+            <a href="mailto:langbenlanglou@gmail.com">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                Email
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 微视界 工作室 weisee team · </p>
+    </footer>
+</body>
+</html>
